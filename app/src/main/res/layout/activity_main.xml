@@ -6,9 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <otus.homework.customview.PieChartView
-        android:id="@+id/pieChart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+<!--    <otus.homework.customview.PieChartView-->
+<!--        android:id="@+id/pieChart"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+        <otus.homework.customview.LineChartView
+            android:id="@+id/LineChartView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
