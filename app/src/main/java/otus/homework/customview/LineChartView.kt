@@ -22,9 +22,10 @@ class LineChartView(context: Context, attrs: AttributeSet? = null) : View(contex
 
     private var minAmount = 0
     private var maxAmount = 0
-    private val offsetEnd = 12f
-    private var offsetStart = 0f
+    private val offsetEnd = 50f
+    private var offsetStart = 50f
     private var offsetBottom = 0f
+    private var offsetTop = 50f
     private var widthTime = 0f
     private var heightValue = 0f
     private var eachTimeN = 1
@@ -101,7 +102,7 @@ class LineChartView(context: Context, attrs: AttributeSet? = null) : View(contex
     }
 
     override fun onDraw(canvas: Canvas) {
-        val heightStep = height / (maxAmount - minAmount)
+        val heightStep = (height - offsetTop) / (maxAmount - minAmount)
         val widthStep = if (timestampList.size > 1) width / (timestampList.size - 1) else width
 
         if (widthTime >= widthStep) {
@@ -109,14 +110,14 @@ class LineChartView(context: Context, attrs: AttributeSet? = null) : View(contex
         }
 
         canvas.drawLine(
-            offsetStart,
             0f,
-            offsetStart,
+            0f,
+            0f,
             height,
             paintBackgroundBorder
         )
         canvas.drawLine(
-            offsetStart,
+            0f,
             height,
             measuredWidth.toFloat(),
             height,
